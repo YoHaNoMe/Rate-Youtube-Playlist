@@ -2,7 +2,7 @@
 One day I opened Youtube and watched a playlist and then when I finished it, I really wanted to appreciate the man who made this playlist by liking it.
 But I realized that I have to go through every video and like it. Worsen the situation more the playlist was in range of 30 to 50 videos, So it was so painful to do that.
 Should I have to open each video and like it?!!
-Of course I did not do that. I have just made a program which can do that for me, So if you have the same problem which i had don't worry, i got you ;).
+Of course I did not do that. I made a program which can do that for me, So if you have the same problem which i had don't worry, i got you ;).
 
 # Before you get started
 You have to be familiar with Youtube API if you want to modify the code. Also you may want to have a look at [OAuth 2.0 for Installed Application](https://developers.google.com/api-client-library/python/auth/installed-app)
