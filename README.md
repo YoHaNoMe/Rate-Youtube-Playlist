@@ -34,8 +34,8 @@ Please if you have any **Problem** at any of the above steps, refer to the [this
    - python3 main.py
 
 # How the program works
-After you run the program you will have to authorize the application, by using a link which should show up as soon as you run the program. After that you will be prompted to enter a path to the **Credentials**  which you have downloaded it in step (1).Make sure you enter a path followed by a slash and then the file name (ex. XXX/XXX/secrets.json).
-Then a menu will appear and you can choose to: Rate(like, dislike, none) a video, Rate a playlist or exit.Enter the url of video or playlist followed by a comma then the rate and enjoy ;).
+After you run the program you will have to authorize the application, by using a link which should show up as soon as you run the program. After that you will be prompted to enter a path to the **Credentials**  which you have downloaded it in step (1), Make sure you enter a path followed by a slash and then the file name (ex. XXX/XXX/secrets.json), and your API key.
+Then a menu will appear and you can choose to: Rate(like, dislike, none) a video, Rate a playlist or exit. Enter the URL of video or playlist followed by a comma then the rate and enjoy ;).
 
 
 # IMPORTANT Note
