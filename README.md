@@ -9,8 +9,8 @@ You have to be familiar with Youtube API if you want to modify the code. Also yo
 which it is the method that i used to make this program.
 
 # Get started
-1 - Go to [this website](https://console.developers.google.com/flows/enableapi?apiid=youtube) to select or create project:
-    - click continue after selecting the appropriate choice for you.
+1- Go to [this website](https://console.developers.google.com/flows/enableapi?apiid=youtube) to select or create project:
+   - click continue after selecting the appropriate choice for you.
     - On Add credentials for your project, click **Cancel**.
     - Select OAuth consent screen, Specify the application name and email address then click save.
     - Create Credentials then choose OAuth client ID.
