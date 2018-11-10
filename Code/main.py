@@ -91,7 +91,7 @@ if __name__ == '__main__':
             path.close()
         # there is no utility file, it is deleted
         else:
-            print('There is no utility file!')
+            print('There is no utility file!, create a file and name it utility.txt then put it into the Code folder')
             exit()
     except Exception as e:
         print(e.args)
