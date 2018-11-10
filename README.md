@@ -24,7 +24,7 @@ which it is the method that i used to make this program.
 3. Install additional libraries:
    - pip install --upgrade google-auth google-auth-oauthlib google-auth-httplib2
 
-Please if you have any problem at any of the above steps, refer to the [this link](https://developers.google.com/youtube/v3/quickstart/python) there are more detailed information.
+Please if you have any **Problem** at any of the above steps, refer to the [this link](https://developers.google.com/youtube/v3/quickstart/python) there are more detailed information.
 
 4. Make sure that your python version >= 3.5
 
