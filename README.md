@@ -26,13 +26,15 @@ which it is the method that i used to make this program.
 
 Please if you have any **Problem** at any of the above steps, refer to the [this link](https://developers.google.com/youtube/v3/quickstart/python) there are more detailed information.
 
-4. Make sure that your python version >= 3.5
+4. You should have an API Key
 
-5. Run the main.py:
+5. Make sure that your python version >= 3.5
+
+6. Run the main.py:
    - python3 main.py
 
 # How the program works
-After you run the program you will have to authorize the application, by using a link which should show up as soon as you run the program.
+After you run the program you will have to authorize the application, by using a link which should show up as soon as you run the program. After that you will be prompted to enter a path to the **Credentials**  which you have downloaded it in step (1).Make sure you enter a path followed by a slash and then the file name (ex. XXX/XXX/secrets.json).
 Then a menu will appear and you can choose to: Rate(like, dislike, none) a video, Rate a playlist or exit.Enter the url of video or playlist followed by a comma then the rate and enjoy ;).
 
 

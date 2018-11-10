@@ -80,7 +80,7 @@ if __name__ == '__main__':
         if utility_path.is_file():
             if os.stat(utility_path).st_size == 0:
                 credentials_path = Path(input('Enter credentials path: '))
-                api_key = input('Enter Api key: ')
+                api_key = input('Enter API key: ')
                 path = open(utility_path, 'w')
                 path.write(str(credentials_path)+'\n')
                 path.write(api_key)
