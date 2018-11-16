@@ -73,6 +73,13 @@ def print_error_message(e):
     return message
 
 
+def credentials_path_exists(secret_file):
+    if Path(secret_file).exists():
+        return True
+    else:
+        return False
+
+
 if __name__ == '__main__':
 
     try:
@@ -96,10 +103,17 @@ if __name__ == '__main__':
     except Exception as e:
         print(e.args)
 
-    # check if credential path and api key not empty
-    if CLIENT_SECRETS_FILE == '' or API_KEY == '':
-        print('Please enter credential path and api key')
+    # check if credential path, api key and secret_file endswith '.json' not empty
+    if CLIENT_SECRETS_FILE == '' or not CLIENT_SECRETS_FILE.endswith('.json') or API_KEY == '':
+        print('There are something wrong with credential path or api key, please read the documentaion page on Github carefully')
         exit()
+
+    if not credentials_path_exists(CLIENT_SECRETS_FILE):
+        path = open(utility_path, 'w')
+        print('You have changed the path of Credentials or the file is not exist, please specify it again (open the program again!)')
+        path.close()
+        exit()
+
     os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
     credential_dict = {
         'client_secret_file': CLIENT_SECRETS_FILE,
