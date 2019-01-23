@@ -52,10 +52,6 @@ def extract_id_rate(argument):
     if argument is None:
         return None
     try:
-        # if argument.find('playlist') != -1:
-        #     url_id = re.search(r'(?<=list=)\w+', argument).group(0)
-        # else:
-        #     url_id = re.search(r'(?<=\?v=)\w+[-]?(\w+)?', argument).group(0)
         url_id = re.search(r'((?<=list=)|(?<=\?v=)).+(?=,)', argument).group(0)
         try:
             rate = re.search(r'(?<=,)(like|dislike|none)$', argument, re.I).group(0).lower()
