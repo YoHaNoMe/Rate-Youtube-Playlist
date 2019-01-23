@@ -94,7 +94,7 @@ class Video:
                     next_page_token=next_page_token
                 )
 
-            result_dict = {'success': True, 'message': rating + 'd Successfully'}
+            result_dict = {'success': True, 'message': 'Done Successfully'}
         except HttpError as e:
             result_dict = {'success': False, 'message': e}
         return result_dict

@@ -15,7 +15,7 @@ UTILITY_FILE_NAME = 'utility.txt'
 
 
 def print_choice():
-    print('*********************************\n1 - Rate Video\n2- Rate Playlist\n3- '
+    print('*********************************\n1- Rate Video\n2- Rate Playlist\n3- '
           'Exit\n*********************************\n')
 
 
@@ -41,7 +41,7 @@ def rate_video(video, video_id, rating):
             id=video_id,
             rating=rating
         )
-        result_dict = {'success': True, 'message': rating + 'd Successfully'}
+        result_dict = {'success': True, 'message': 'Done Successfully'}
     except HttpError as e:
         result_dict = {'success': False, 'message': e}
     return result_dict
@@ -52,10 +52,11 @@ def extract_id_rate(argument):
     if argument is None:
         return None
     try:
-        if argument.find('playlist') != -1:
-            url_id = re.search(r'(?<=list=)\w+', argument).group(0)
-        else:
-            url_id = re.search(r'(?<=\?v=)\w+[-]?(\w+)?', argument).group(0)
+        # if argument.find('playlist') != -1:
+        #     url_id = re.search(r'(?<=list=)\w+', argument).group(0)
+        # else:
+        #     url_id = re.search(r'(?<=\?v=)\w+[-]?(\w+)?', argument).group(0)
+        url_id = re.search(r'((?<=list=)|(?<=\?v=)).+(?=,)', argument).group(0)
         try:
             rate = re.search(r'(?<=,)(like|dislike|none)$', argument, re.I).group(0).lower()
         except TypeError as e:
@@ -84,14 +85,19 @@ if __name__ == '__main__':
 
     try:
         utility_path = Path(UTILITY_FILE_NAME)
+        # If there is a file named utility
         if utility_path.is_file():
+            # If the file doesnt contain any data
             if os.stat(utility_path).st_size == 0:
+                # Prompt the user to enter credential path
                 credentials_path = Path(input('Enter credentials path: '))
+                # Prompt the user to enter the API key
                 api_key = input('Enter API key: ')
+                # Write to the file
                 path = open(utility_path, 'w')
                 path.write(str(credentials_path)+'\n')
                 path.write(api_key)
-
+            # Open the file, which is now containing data
             path = open(utility_path, 'r')
             CLIENT_SECRETS_FILE = path.readline().replace('\n', '')
             API_KEY = path.readline()
@@ -134,11 +140,13 @@ if __name__ == '__main__':
         # Getting the video/playlist url and rate if choice is 1 or 2, exit if the choice 3
         data_info = choice_switcher(choice)
         print('\n********************************* The Result *********************************')
+        # Extract id and rate
+        id_rate_dict = extract_id_rate(data_info)
 
         # Rate video
         if choice == 1:
-            # Extract id and rate
-            id_rate_dict = extract_id_rate(data_info)
+            # # Extract id and rate
+            # id_rate_dict = extract_id_rate(data_info)
             video_id = id_rate_dict['id']
             # Check if the user entered a valid url and rate splitted by Comma
             if video_id != -1:
@@ -155,8 +163,8 @@ if __name__ == '__main__':
 
         # Rate Playlist
         elif choice == 2:
-            # Extract id and rate
-            id_rate_dict = extract_id_rate(data_info)
+            # # Extract id and rate
+            # id_rate_dict = extract_id_rate(data_info)
             playlist_id = id_rate_dict.get('id')
             # Check if the user entered a valid url and rate splitted by Comma
             if playlist_id != -1:
